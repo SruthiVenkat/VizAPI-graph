@@ -9698,6 +9698,13 @@ body {
   legendLines2.append('span').html('<svg viewBox="17 17.5 50 5" width="80%"><circle class="circLegend" r="2" stroke="#000000" stroke-width="1" fill="#CAB2C8" cx="20" cy="20"></circle></svg><span style="z-index: 2;/* right: 10%; */left: 30%;position: absolute;">library</span>')
   legendLines2.append('span').html('<svg viewBox="17 17.5 50 5" width="80%"><circle class="circLegend" r="2.2" stroke="#000000" stroke-width="0.1" fill="#CAB2C8" cx="20" cy="20"></circle></svg><span style="z-index: 2;/* right: 10%; */left: 30%;position: absolute;">dependency</span>')
 
+  var showLblCheckbox = d3.select("h3").append("div").style("margin", "1em");
+  showLblCheckbox.append("input")
+    .attr("type", "checkbox").attr("id", "showLblCheckbox").attr("name", "showLblCheckbox").attr("value", "Show Package Names")
+    .on('change', showLbls);
+  showLblCheckbox.append("label")
+    .attr("for", "showLblCheckbox").html('Show Package Names')
+
   var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height)
